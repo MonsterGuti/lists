@@ -1,0 +1,35 @@
+lst_10 = []
+for i in range(10):
+    num = float(input(f"Enter number #{i + 1}: "))
+    while num % 1 != 0 or num <= 0:
+        print("The number must be positive and integer.")
+        num = float(input())
+    lst_10.append(num)
+print(f"Your list is {lst_10}")
+
+sum_of_odds = 0
+for j in lst_10:
+    if j % 2 != 0:
+        sum_of_odds += j
+print(f"The sum of odd numbers that are multiple of 2 is: {sum_of_odds}")
+
+sum_of_all = 0
+for k in lst_10:
+    sum_of_all += k
+avg_sum = sum_of_all / 10
+print(f"The average value of numbers is {avg_sum}")
+
+lst_5 = []
+for big_num in lst_10:
+    if big_num % 2 == 0:
+        lst_5.append(big_num)
+lst_5.sort(reverse=True)
+lst_5 = lst_5[:5]
+lst_5.sort()
+print(f"Top 5 biggest numbers are {lst_5}")
+
+lst_5.sort(reverse=True)
+print(f"The 5 biggest numbers reversed: {lst_5}")
+
+lst_5 = lst_5[1::2]
+print(f"The new list with odd indexes is {lst_5}")
