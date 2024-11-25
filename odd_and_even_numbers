@@ -1,0 +1,19 @@
+def my_function(list1):
+    for i in list1:
+        if i % 2 == 0:
+            even_numbers.append(i)
+        else:
+            odd_numbers.append(i)
+    print(even_numbers)
+    print(odd_numbers)
+
+
+import random
+
+list1 = []
+for _ in range(10):
+    list1.append(random.randint(1, 100))
+odd_numbers = []
+even_numbers = []
+print(list1)
+my_function(list1)
