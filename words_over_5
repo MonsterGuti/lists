@@ -1,0 +1,19 @@
+# words = ["ябълка", "круша", "банан", "домат", "диня", "ананас", "череша"]
+# new_list = []
+# for i in words:
+#     if len(i) > 5:
+#         new_list.append(i)
+# print(words)
+# print(new_list)
+
+def my_function(words, new_list):
+    for j in words:
+        if len(j) > 5:
+            new_list.append(j)
+    return new_list
+
+
+words = ["ябълка", "круша", "банан", "домат", "диня", "ананас", "череша"]
+new_list = []
+print(words)
+print(my_function(words, new_list))
