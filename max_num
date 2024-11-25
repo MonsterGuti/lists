@@ -1,0 +1,6 @@
+import random
+random_list = []
+for _ in range(10):
+    random_list.append(random.randint(1, 100))
+print(random_list)
+print(max(random_list))
