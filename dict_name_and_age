@@ -1,0 +1,18 @@
+people = {
+    "Иван": {"name": "Иван", "age": 30},
+    "Мария": {"name": "Мария", "age": 22},
+    "Петър": {"name": "Петър", "age": 28},
+    "Анна": {"name": "Анна", "age": 26},
+    "Михаил": {"name": "Михаил", "age": 23}
+}
+my_list = []
+
+
+def my_function(people):
+    for key in people:
+        if people[key]["age"] > 25:
+            my_list.append(people[key])
+    print(my_list)
+
+
+my_function(people)
