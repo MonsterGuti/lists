@@ -1,0 +1,12 @@
+length_of_dic = int(input("Enter the length of the dictionary: "))
+dic = {}
+
+for i in range(length_of_dic):
+    word = input("Enter a word: ")
+    dic[word] = len(word)
+
+user_input = int(input("Enter the length of the words you want: "))
+
+for word in dic:
+    if dic[word] == user_input:
+        print(word)
