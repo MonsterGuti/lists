@@ -1,0 +1,64 @@
+import random
+
+while True:
+    try:
+        n = int(input("Enter a number between 21 and 29: "))
+        if 20 < n < 30:
+            break
+        else:
+            print("The number must be between 21 and 29. Try again.")
+    except ValueError:
+        print("Invalid input! Please enter an integer.")
+
+my_list = []
+for i in range(n):
+    my_list.append(random.randint(-100, 100))
+print(f"Generated list: {my_list}")
+
+sum_of_odd = 0
+for j in range(len(my_list)):
+    if j % 2 != 0:
+        sum_of_odd += my_list[j]
+print(f"Sum of elements at odd indices: {sum_of_odd}")
+
+count_of_2 = 0
+product = 1
+for k in my_list:
+    if k % 2 == 0 and k % 10 != 0:
+        count_of_2 += 1
+    if k < 0 and k % 2 == 0:
+        product *= k
+print(f"Count of even numbers not divisible by 10: {count_of_2}")
+print(f"Product of negative even numbers: {product}")
+
+my_list_2 = []
+for k in my_list:
+    if k > n:
+        my_list_2.append(k)
+print(f"List of numbers greater than {n}: {my_list_2}")
+
+set_my_list_2 = set(my_list_2)
+print(f"Set of numbers greater than {n}: {set_my_list_2}")
+
+if set_my_list_2:
+    min_num = min(set_my_list_2)
+    max_num = max(set_my_list_2)
+    diff = max_num - min_num
+    print(f"Minimum number in set: {min_num}")
+    print(f"Maximum number in set: {max_num}")
+    print(f"Difference between max and min: {diff}")
+
+new_list = []
+count = 0
+for y in my_list_2:
+    if y % 2 != 0:
+        new_list.append(y)
+        count += 1
+print(f"New list of odd numbers greater than {n}: {new_list}")
+print(f"Count of odd numbers greater than {n}: {count}")
+
+if set_my_list_2:
+    min_num_2 = min(set_my_list_2)
+    print(f"Smallest number in set before removal: {min_num_2}")
+    set_my_list_2.discard(min_num_2)
+    print(f"Set after removing the smallest number: {set_my_list_2}")
