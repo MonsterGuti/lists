@@ -1,0 +1,37 @@
+import random 
+
+list_1 = []
+for _ in range(40):
+    list_1.append(random.randint(100, 340))
+print("Initial list with 40 random numbers:", list_1)
+
+even_count = odd_count = 0
+for i in list_1:
+    if i % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+print(f"Number of even numbers in the list: {even_count}")
+print(f"Number of odd numbers in the list: {odd_count}")
+
+sum_of_all = count_of_all = 0
+for j in list_1:
+    sum_of_all += j
+    count_of_all += 1
+avg_num = sum_of_all / count_of_all
+max_num = max(list_1)
+print(f"Difference between the average ({avg_num:.2f}) and the maximum ({max_num}): {abs(avg_num - max_num):.2f}")
+
+list_2 = []
+list_1.sort()
+for k in list_1:
+    if k % 2 == 0:
+        list_2.append(k)
+    if len(list_2) == 6:
+        break
+print(f"List with the smallest 6 even numbers: {list_2}")
+
+for x in range(len(list_2)):
+    if x % 2 != 0:
+        list_2.remove(list_2[x])
+print(f"List after removing elements at odd indices: {list_2}")
