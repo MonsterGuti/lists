@@ -1,0 +1,37 @@
+print("Enter fifteen positive integer numbers.")
+list_15 = []
+while True:
+    if len(list_15) == 15:
+        break
+    num = int(input())
+    if num <= 0:
+        continue
+    list_15.append(num)
+print()
+print("Your list with positive integer numbers is:")
+print(list_15)
+print()
+count_3 = 0
+for i in list_15:
+    if i % 3 == 0:
+        count_3 += 1
+print(f"The count of numbers multiple of 3 is: {count_3}")
+print()
+num_min = min(list_15)
+for k in range(len(list_15)):
+    if list_15[k] == num_min:
+        print(f"The min number in the list is {num_min}")
+        print(f"It's position in the list is: {k}")
+        break
+list_filtered = []
+for i in list_15:
+    if i % 2 == 0 and i > 10:
+        list_filtered.append(i)
+list_filtered.sort()
+nums = 0
+while nums < len(list_filtered):
+    if list_filtered[nums] % 5 == 0:
+        list_filtered.pop(nums)
+    else:
+        nums += 1
+print(f"The new list is: {list_filtered}")
