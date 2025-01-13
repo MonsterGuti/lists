@@ -1,0 +1,75 @@
+import random
+import time
+
+my_list = []
+while True:
+    n = int(input("Enter a number between 6 and 15 for the list size: "))
+    if 5 <= n <= 15:
+        print("Valid input! Proceeding to populate the list...")
+        time.sleep(3)
+        break
+
+p = random.randint(-3700, -1600)
+q = random.randint(2222, 3333)
+print(f"Generated range for valid numbers: {p} to {q}")
+
+for i in range(n):
+    while True:
+        num = int(input(f"Enter number {i+1} within the range ({p}, {q}): "))
+        if p <= num <= q:
+            my_list.append(num)
+            print(f"Number {num} added to the list.")
+            break
+
+positive_nums = 0
+for num in my_list:
+    if num > 0 and (num // 100) % 2 == 0:
+        positive_nums += 1
+print(f"Count of positive numbers with even hundreds digit: {positive_nums}")
+
+my_list.sort(reverse=True)
+print("Sorted list in descending order:", my_list)
+
+for num in range(len(my_list)):
+    if my_list[num] % 6 == 3:
+        print(f"Index of the first number divisible by 6 with a remainder of 3: {num}")
+        break
+
+list_2 = []
+for i in my_list:
+    if 10 <= 100 and i % 5 == 0:
+        list_2.append(i)
+print("List of numbers that are two-digit and divisible by 5:", list_2)
+
+proizv = 1
+new_list = []
+for index in range(len(list_2)):
+    if index % 2 != 0:
+        proizv *= list_2[index]
+    if index % 2 != 0 and list_2[index] % 2 == 0:
+       new_list.append(list_2[index])
+print(f"Product of numbers at odd indices in list_2: {proizv}")
+print(f"New list of numbers from list_2 that are at odd indices and even: {new_list}")
+
+while True:
+    if len(my_list) == len(list_2):
+        print("The two lists have equal length.")
+        break
+    elif len(my_list) > len(list_2):
+        if len(list_2) > 1:  # Ensure list_2 has at least two elements
+            num = list_2[0] + list_2[len(list_2) - 1]
+            first_position = round(len(list_2) / 2)
+            list_2.insert(first_position, num)
+            print("Updated list_2 after insertion:", list_2)
+        else:
+            print("list_2 is too small to perform the operation.")
+        break
+    else:
+        if len(my_list) > 1:
+            num = my_list[0] + my_list[len(my_list) - 1]
+            first_position = round(len(my_list) / 2)
+            my_list.insert(first_position, num)
+            print("Updated my_list after insertion:", my_list)
+        else:
+            print("my_list is too small to perform the operation.")
+        break
