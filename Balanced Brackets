@@ -1,0 +1,20 @@
+number_of_lines = int(input())
+stack = []
+
+for line in range(number_of_lines):
+    text = input().strip()
+
+    for char in text:
+        if char == "(":
+            stack.append(char)
+        elif char == ")":
+            if stack:
+                stack.pop()
+            else:
+                print("UNBALANCED")
+                exit()
+
+if not stack:
+    print("BALANCED")
+else:
+    print("UNBALANCED")
