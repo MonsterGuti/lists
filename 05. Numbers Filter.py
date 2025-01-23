@@ -1,26 +1,26 @@
 n = int(input())
-positive_list = []
-negative_list = []
-odd_list = []
-even_list = []
+list_of_numbers = []
 for i in range(n):
     num = int(input())
-    if num >= 0:
-        positive_list.append(num)
-    else:
-        negative_list.append(num)
-    if num % 2 == 0:
-        even_list.append(num)
-    else:
-        odd_list.append(num)
+    list_of_numbers.append(num)
+filtered_list_of_numbers = []
 command = input()
-if command == "positive":
-    print(positive_list)
-elif command == "negative":
-    print(negative_list)
-elif command == "even":
-    print(even_list)
+if command == "even":
+    for number in list_of_numbers:
+        if number % 2 == 0:
+            filtered_list_of_numbers.append(number)
 elif command == "odd":
-    print(odd_list)
+    for number in list_of_numbers:
+        if number %2 != 0:
+            filtered_list_of_numbers.append(number)
+elif command == "negative":
+    for number in list_of_numbers:
+        if number < 0:
+            filtered_list_of_numbers.append(number)
+elif command == "positive":
+    for number in list_of_numbers:
+        if number >= 0:
+            filtered_list_of_numbers.append(number)
 else:
     print("Invalid command.")
+print(filtered_list_of_numbers)
